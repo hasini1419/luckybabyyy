@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Lucky 💌</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #ffd6e7; /* light pink */
+  text-align: center;
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+/* Floating image animation */
+.floating-img {
+  width: 220px;
+  border-radius: 20px;
+  animation: float 3s ease-in-out infinite;
+  margin-top: 20px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+#letter {
+  width: 80%;
+  margin: auto;
+  font-size: 20px;
+  white-space: pre-line;
+  border: 2px solid pink;
+  padding: 20px;
+  border-radius: 15px;
+  background: white;
+  min-height: 150px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: pink;
+}
+
+#response {
+  font-size: 22px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+  <source src="lucky.mp3" type="audio/mp3">
+</audio>
+
+<h1>💖 Hii Lucky 💖</h1>
+
+<div id="letter"></div>
+
+<!-- Floating brother sister pic -->
+<img src="pic.png" class="floating-img">
+
+<div id="question" style="display:none;">
+  <h2>Did you eat today..?</h2>
+  <button onclick="answerYes()">Yes</button>
+  <button onclick="answerNo()">No</button>
+</div>
+
+<div id="response"></div>
+
+<script>
+const text = 
+`Hii Lucky 😊
+This is your sister ❤️
+How are you ❤️
+Manchiga sadhuko
+Eat well and study well...
+
+Akka wants to say something...
+Always be happy, healthy,
+and remember I care for you a lot 💌`;
+
+let i = 0;
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("letter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50);
+  } else {
+    document.getElementById("question").style.display = "block";
+  }
+}
+
+function answerYes() {
+  document.getElementById("response").innerHTML = "Good boy 😄 Akka is proud!";
+}
+
+function answerNo() {
+  document.getElementById("response").innerHTML = "You have to eat! 😠🍽️";
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
